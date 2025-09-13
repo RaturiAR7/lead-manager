@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 require("dotenv").config();
 
 ////Initilize app
@@ -9,7 +8,7 @@ const app = express();
 
 ////Middlewares
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 ////routes
 app.get("/health", (req, res) => {
