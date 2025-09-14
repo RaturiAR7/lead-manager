@@ -30,10 +30,7 @@ export const createLead = async (req, res) => {
 ////Get Leads List
 export const getLeadsList = async (req, res) => {
   try {
-    const { email } = req.body;
-    const leadsList = await Lead.find({
-      email,
-    });
+    const leadsList = await Lead.find();
     res.status(200).json(leadsList);
   } catch (error) {
     res.status(500).json(error);
