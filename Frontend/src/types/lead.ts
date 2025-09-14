@@ -16,8 +16,8 @@ export const columns: ColumnDef<LeadTypes>[] = [
     header: "Name",
   },
   {
-    accessorKey: "contact",
-    header: "Contact",
+    accessorKey: "phone",
+    header: "Phone",
   },
   {
     accessorKey: "status",
@@ -26,5 +26,9 @@ export const columns: ColumnDef<LeadTypes>[] = [
   {
     accessorKey: "email",
     header: "Email",
+  },
+  {
+    accessorKey: "notes",
+    header: "Notes",
   },
 ];
