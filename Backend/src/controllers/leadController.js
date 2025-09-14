@@ -21,3 +21,13 @@ export const getLeadsList = async (req, res) => {
     res.status(500).json(error);
   }
 };
+////Update Lead
+export const updateLead = async (req, res) => {
+  try {
+    const id = req.params?.id;
+    const lead = await Lead.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(lead);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
