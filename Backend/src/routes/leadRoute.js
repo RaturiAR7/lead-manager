@@ -1,5 +1,5 @@
-const express = require("express");
-const { createLead } = require("../controllers/leadController");
+import express from "express";
+import { createLead } from "../controllers/leadController.js";
 
 const router = express.Router();
 

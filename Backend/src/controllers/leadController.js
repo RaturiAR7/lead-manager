@@ -1,4 +1,4 @@
-import Lead from "../models/leadModel";
+import Lead from "../models/leadModel.js";
 
 ///Add Lead
 export const createLead = async (req, res) => {
@@ -9,4 +9,3 @@ export const createLead = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-

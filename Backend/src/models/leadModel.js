@@ -11,4 +11,6 @@ const leadSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Lead", leadSchema);
+const Lead = mongoose.model("Lead", leadSchema);
+
+export default Lead;
