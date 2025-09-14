@@ -8,6 +8,7 @@ import { connectToDb } from "./lib/db.js";
 dotenv.config();
 const PORT = 8000;
 const app = express();
+///Connect to DB
 connectToDb();
 
 ////Middlewares
