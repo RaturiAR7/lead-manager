@@ -1,4 +1,4 @@
-export interface Lead {
+export interface LeadTypes {
   id: string;
   name: string;
   contact: string;
@@ -10,7 +10,7 @@ export interface Lead {
   updatedAt: string;
 }
 import type { ColumnDef } from "@tanstack/react-table";
-export const columns: ColumnDef<Lead>[] = [
+export const columns: ColumnDef<LeadTypes>[] = [
   {
     accessorKey: "name",
     header: "Name",
