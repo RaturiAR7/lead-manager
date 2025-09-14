@@ -1,8 +1,9 @@
-import LeadHeader from "@/components/leads/LeadHeader";
+import LeadsHeader from "@/components/leads/LeadsHeader";
+import LeadsListOperators from "@/components/leads/LeadsListOperators";
 import { DataTable } from "@/components/leads/LeadsTable";
 import { columns, type LeadTypes } from "@/types/lead";
 
-const sampleLeads: Lead[] = [
+const sampleLeads: LeadTypes[] = [
   {
     id: "1",
     name: "Kari Legros",
@@ -40,7 +41,8 @@ const sampleLeads: Lead[] = [
 const Lead = () => {
   return (
     <main className='px-5'>
-      <LeadHeader />
+      <LeadsHeader />
+      <LeadsListOperators />
       <DataTable data={sampleLeads} columns={columns} />
     </main>
   );
