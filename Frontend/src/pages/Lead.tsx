@@ -4,9 +4,17 @@ import { DataTable } from "@/components/leads/LeadsTable";
 import { columns, type LeadTypes } from "@/types/lead";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import AddLeadModal from "@/components/leads/LeadsModalForm";
 
 const Lead = () => {
   const [leadList, setLeadList] = useState<LeadTypes[]>([]);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleAddLead = (data: LeadTypes) => {
+    console.log("Lead Data Submitted:", data);
+    // TODO: send data to backend API
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     const fetchLeads = async () => {
@@ -18,9 +26,14 @@ const Lead = () => {
   }, []);
 
   return (
-    <main className='px-5'>
-      <LeadsHeader />
+    <main className='px-5 relative'>
+      <LeadsHeader setModalOpen={setModalOpen} />
       <LeadsListOperators />
+      <AddLeadModal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        onSubmitLead={handleAddLead}
+      />
       <DataTable data={leadList} columns={columns} />
     </main>
   );
