@@ -23,29 +23,36 @@ export const columns: ColumnDef<LeadTypes>[] = [
   {
     accessorKey: "name",
     header: "Name",
+    enableSorting: true,
   },
   {
     accessorKey: "phone",
     header: "Phone",
+    enableSorting: true,
   },
   {
     accessorKey: "status",
     header: "Status",
+    enableSorting: true,
   },
   {
     accessorKey: "email",
     header: "Email",
+    enableSorting: true,
   },
   {
     accessorKey: "note",
     header: "Note",
+    enableSorting: true,
   },
   {
     accessorKey: "source",
     header: "Source",
+    enableSorting: true,
   },
   {
     accessorKey: "state",
     header: "State",
+    enableSorting: true,
   },
 ];
