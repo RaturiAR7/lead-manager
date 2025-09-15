@@ -12,16 +12,19 @@ const Lead = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleAddLead = async (data: LeadFormData) => {
-    console.log("Lead Data Submitted:", data);
-    const response = await axios.post("http://localhost:8000/api/leads/", data);
-    console.log("Response from server:", response.data);
-    setLeadList(response.data);
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_BASE_URL}/api/leads/`,
+      data
+    );
+    setLeadList((prev) => [...prev, response.data]);
     setModalOpen(false);
   };
 
   useEffect(() => {
     const fetchLeads = async () => {
-      const response = await axios.get("http://localhost:8000/api/leads/");
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/api/leads/`
+      );
       setLeadList(response.data);
     };
     fetchLeads();
