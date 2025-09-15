@@ -6,8 +6,7 @@ export const leadSchema = z.object({
   altPhone: z.string().optional(),
 
   email: z.email("Invalid email"),
-  altEmail: z.email("Invalid alternate email").optional(),
-
+  altEmail: z.string().optional(),
   note: z.string().optional(),
 
   status: z.enum(["Qualified", "Converted", "Follow-Up", "New"]).default("New"),
