@@ -10,16 +10,17 @@ const Lead = () => {
   const [leadList, setLeadList] = useState<LeadTypes[]>([]);
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleAddLead = (data: LeadTypes) => {
+  const handleAddLead = async (data: LeadTypes) => {
     console.log("Lead Data Submitted:", data);
-    // TODO: send data to backend API
+    const response = await axios.post("http://localhost:8000/api/leads/", data);
+    console.log("Response from server:", response.data);
+    setLeadList(response.data);
     setModalOpen(false);
   };
 
   useEffect(() => {
     const fetchLeads = async () => {
       const response = await axios.get("http://localhost:8000/api/leads/");
-      console.log(response.data);
       setLeadList(response.data);
     };
     fetchLeads();

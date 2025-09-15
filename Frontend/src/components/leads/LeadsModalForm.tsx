@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { leadSchema } from "@/validations/LeadValidation";
 import type { InferType } from "yup";
+
 type LeadFormData = InferType<typeof leadSchema>;
 
 interface AddLeadModalProps {
@@ -68,6 +69,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter phone'
             />
+            {errors.phone && (
+              <p className='text-red-500 text-xs'>{errors.phone.message}</p>
+            )}
           </div>
 
           <div>
@@ -77,6 +81,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter alt phone'
             />
+            {errors.altPhone && (
+              <p className='text-red-500 text-xs'>{errors.altPhone.message}</p>
+            )}
           </div>
 
           <div>
@@ -98,6 +105,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter alt email'
             />
+            {errors.altEmail && (
+              <p className='text-red-500 text-xs'>{errors.altEmail.message}</p>
+            )}
           </div>
 
           <div>
@@ -123,6 +133,11 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter qualification'
             />
+            {errors.qualification && (
+              <p className='text-red-500 text-xs'>
+                {errors.qualification.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -132,6 +147,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter interest field'
             />
+            {errors.interest && (
+              <p className='text-red-500 text-xs'>{errors.interest.message}</p>
+            )}
           </div>
 
           <div>
@@ -141,6 +159,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter source'
             />
+            {errors.source && (
+              <p className='text-red-500 text-xs'>{errors.source.message}</p>
+            )}
           </div>
 
           <div>
@@ -150,6 +171,11 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter assigned person'
             />
+            {errors.assignedTo && (
+              <p className='text-red-500 text-xs'>
+                {errors.assignedTo.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -159,6 +185,11 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter job interest'
             />
+            {errors.jobInterest && (
+              <p className='text-red-500 text-xs'>
+                {errors.jobInterest.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -168,6 +199,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter state'
             />
+            {errors.state && (
+              <p className='text-red-500 text-xs'>{errors.state.message}</p>
+            )}
           </div>
 
           <div>
@@ -177,6 +211,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter city'
             />
+            {errors.city && (
+              <p className='text-red-500 text-xs'>{errors.city.message}</p>
+            )}
           </div>
 
           <div>
@@ -186,6 +223,11 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter passout year'
             />
+            {errors.passoutYear && (
+              <p className='text-red-500 text-xs'>
+                {errors.passoutYear.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -195,6 +237,9 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter source info'
             />
+            {errors.heardFrom && (
+              <p className='text-red-500 text-xs'>{errors.heardFrom.message}</p>
+            )}
           </div>
 
           <div className='col-span-2 flex justify-end gap-3 mt-4'>

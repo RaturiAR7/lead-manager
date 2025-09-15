@@ -1,27 +1,18 @@
 import Lead from "../models/leadModel.js";
-import * as z from "zod";
+import { leadSchema } from "../lib/validation.js";
 
 ///Create Lead
-const LeadSchema = z.object({
-  name: z
-    .string("Not a String")
-    .min(5, "Name cannot be less than 5 characters"),
-  email: z.email("Invalid email id"),
-  phone: z.string().optional(),
-  company: z.string().optional(),
-  notes: z.string().optional(),
-});
 export const createLead = async (req, res) => {
   try {
     // Validate request body
-    const isValid = LeadSchema.safeParse(req.body); // throws error if invalid
+    const isValid = leadSchema.safeParse(req.body); // throws error if invalid
     if (!isValid.success) {
       res.status(400).json({
         message: isValid.error._zod.def[0].message,
       });
       return;
     }
-    const lead = await Lead.create(validatedData);
+    const lead = await Lead.create(isValid.data);
     res.status(201).json(lead);
   } catch (error) {
     return res.status(400).json(error);
