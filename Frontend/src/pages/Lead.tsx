@@ -27,7 +27,7 @@ const Lead = () => {
   }, []);
 
   return (
-    <main className='px-5 relative'>
+    <main>
       <LeadsHeader setModalOpen={setModalOpen} />
       <LeadsListOperators />
       <AddLeadModal
