@@ -5,12 +5,13 @@ import { columns, type LeadTypes } from "@/types/lead";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import AddLeadModal from "@/components/leads/LeadsModalForm";
+import { type LeadFormData } from "@/validations/LeadValidation";
 
 const Lead = () => {
   const [leadList, setLeadList] = useState<LeadTypes[]>([]);
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleAddLead = async (data: LeadTypes) => {
+  const handleAddLead = async (data: LeadFormData) => {
     console.log("Lead Data Submitted:", data);
     const response = await axios.post("http://localhost:8000/api/leads/", data);
     console.log("Response from server:", response.data);
