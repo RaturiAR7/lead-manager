@@ -144,7 +144,7 @@ const AddLeadModal: React.FC<AddLeadModalProps> = ({
           <div>
             <label className='block text-sm font-medium'>Interest Field</label>
             <input
-              {...register("interestField")}
+              {...register("interest")}
               className='w-full border px-3 py-2 rounded-lg'
               placeholder='Enter interest field'
             />
